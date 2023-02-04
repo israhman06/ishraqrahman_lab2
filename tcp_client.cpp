@@ -23,6 +23,8 @@ int main(int argc, char const *argv[])
 	int client_fd = -1;
 
 	// TODO: Create a TCP socket()
+	// cite: https://www.geeksforgeeks.org/socket-programming-cc/
+	int tcp_sock = socket(AF_LOCAL, SOCK_STREAM, 0);
 
 	// Enable reusing address and port
 	if (setsockopt(client_fd, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT, &opt, sizeof(opt))) { 
@@ -44,9 +46,17 @@ int main(int argc, char const *argv[])
 	getaddrinfo(server_ip.c_str(), server_port.c_str(), &hints, &server_addr);
 
 	// TODO: Connect() to the server (hint: you'll need to use server_addr)
+	int connect(int tcp_sock, const struct sockaddr*addr, socklen_taddrlen);
+
 	// TODO: Retreive user input
+
+
 	// TODO: Send() the user input to the server
+
+
 	// TODO: Recieve any messages from the server and print it here. Don't forget to make sure the string is null terminated!
+	
+	
 	// TODO: Close() the socket
 
 	return 0; 
